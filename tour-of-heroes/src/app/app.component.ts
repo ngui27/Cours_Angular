@@ -7,7 +7,7 @@ let heroCount = 2 ;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '';
+  //title = '';
   titleStyle = {'font-family' : 'Arial', 'color' : 'red'};
   username = "Anonymous";
   heroes = [
