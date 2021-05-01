@@ -16,3 +16,5 @@ Mon travail au sein de la formation Angular dispensée part WEBFORCE 3 en avril 
 - Les directives Structurelles
 - Fin du premier PDJ
 - Commencement du Deuxieme PDJ
+- Application d'un style
+- Selection d'une chose

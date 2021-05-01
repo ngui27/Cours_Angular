@@ -7,10 +7,4 @@
         {{ hero.name}}
     </li>
 </ul>
-
-<div *ngIf="selectedHero">
-    <h2>Détails de {{selectedHero.name | uppercase}}: </h2>
-    <div><span>Id :</span> {{selectedHero.id}} </div>
-    <div><span>Pouvoir :</span> {{selectedHero.pouvoir}} </div>
-
-</div>
+<app-hero-details *ngIf="selectedHero" [hero]="selectedHero"></app-hero-details>
