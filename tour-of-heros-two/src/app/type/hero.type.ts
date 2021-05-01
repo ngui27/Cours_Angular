@@ -1,4 +1,6 @@
  
 export default class Hero { 
     id: number;
-    name: string; }
+    name: string; 
+    pouvoir : string;
+}

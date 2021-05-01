@@ -9,12 +9,18 @@ import Hero from '../type/hero.type';
 export class HeroesListComponent implements OnInit {
 
   heroes:Hero[] = [
-    { id : 1, name : 'Batman' },
-    { id : 2, name : 'Superman' },
-    { id : 3, name : 'Spiderman' },
+    { id : 1, name : 'Chachou', pouvoir : "Gros Caractere"  },
+    { id : 2, name : 'Chouchou', pouvoir : "Gros Lunette" },
+    { id : 3, name : 'Tchoutchou', pouvoir : "Gros Tete" },
+    {id:4, name: "P'tit chou", pouvoir : "Gros Couche"}
     ];
   constructor() { }
 
+  selectedHero: Hero;
+
+  selectHero(hero:Hero){
+    this.selectedHero = hero; 
+  }
   ngOnInit(): void {
   }
 
