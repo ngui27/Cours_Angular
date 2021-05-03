@@ -2,7 +2,7 @@
 
 <p>Modification du Hero {{hero.name}}</p>
 
-<form>
+<form (submit)="save()">
     <p>
         <label>name:<input [(ngModel)]="hero.name" placeholder="name">
         </label>
