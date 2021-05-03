@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from '../hero.service';
 import Hero from '../type/hero.type';
 
 @Component({
@@ -7,21 +8,17 @@ import Hero from '../type/hero.type';
   styleUrls: ['./heroes-list.component.css']
 })
 export class HeroesListComponent implements OnInit {
-
-  heroes:Hero[] = [
-    { id : 1, name : 'Chachou', pouvoir : "Gros Caractere"  },
-    { id : 2, name : 'Chouchou', pouvoir : "Gros Lunette" },
-    { id : 3, name : 'Tchoutchou', pouvoir : "Gros Tete" },
-    {id:4, name: "P'tit chou", pouvoir : "Gros Couche"}
-    ];
-  constructor() { }
-
+ 
   selectedHero: Hero;
+  heroes : Hero[];
+
+  constructor(private heroService :HeroService) { }
 
   selectHero(hero:Hero){
     this.selectedHero = hero; 
   }
-  ngOnInit(): void {
+  ngOnInit(){
+    this.heroes= this.heroService.getHeroes(); 
   }
 
 }

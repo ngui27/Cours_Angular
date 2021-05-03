@@ -4,6 +4,7 @@ import { HeroEditComponent } from './hero-edit/hero-edit.component';
 import {HeroesListComponent} from './heroes-list/heroes-list.component'
 
 const routes: Routes = [
+
   {
     path: '',
     component : HeroesListComponent
@@ -18,4 +19,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+   
+ 
+ }
+
