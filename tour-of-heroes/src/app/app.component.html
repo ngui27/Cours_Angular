@@ -10,7 +10,15 @@
 <ul>
   <li *ngFor="let hero of heroes">{{hero}}<small *ngIf="hero == username"> Le BIG BOSS</small> </li>
 </ul>
-
+<h2>Les Vilains</h2>
+<ul>
+  <li *ngFor='let vilain of evils'>{{ vilain }}<small *ngIf="vilain == username">(c'est moi :)</small></li>
+</ul>
 <label for="InputHeroName">Héros à ajouter : <input type="text" name="nameOfTheHero" id="InputHeroName"
     [(ngModel)]="heroToAdd"></label>
 <button (click)="addHero()">Ajouter un héros</button>
+
+label for="InputHeroNameToRemove">Héros à retirer : <select name="nameOfTheHero" id="InputHeroNameToRemove">
+  <option *ngFor='let hero of heroes'>{{hero}}</option>
+</select></label><button (click)='removeHero(heroToRemove)'>Retirer héros</button>
+</p>
