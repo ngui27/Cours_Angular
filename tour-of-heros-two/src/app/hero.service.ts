@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import Hero from './type/hero.type';
 
 
@@ -8,20 +10,15 @@ import Hero from './type/hero.type';
 })
 export class HeroService {
   
-  private heroes: Hero[] = [
-    { id : 1, name : 'Chachou', pouvoir : "Gros Caractere"  },
-    { id : 2, name : 'Chouchou', pouvoir : "Gros Lunette" },
-    { id : 3, name : 'Tchoutchou', pouvoir : "Gros Tete" },
-    {id:4, name: "P'tit chou", pouvoir : "Gros Couche"}
-    ];
+  private heroesUrl= 'api/heroes';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getHeroes() : Hero[]{
-    return this.heroes;
+  getHeroes() : Observable<Hero[]>{
+    return this.http.get<Hero[]>(this.heroesUrl);
   }
 
-  getHeroById(id: number): Hero {
-    return this.heroes.find(( hero ) =>  hero.id ===id);
+  getHeroById(id: number): Observable<Hero>{
+    return this.http.get<Hero>(this.heroesUrl+ '/' +id );
   }
 }
