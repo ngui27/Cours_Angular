@@ -11,6 +11,7 @@ export class HeroesListComponent implements OnInit {
  
   selectedHero: Hero;
   heroes : Hero[];
+  
 
   constructor(private heroService :HeroService) { }
 
@@ -21,4 +22,7 @@ export class HeroesListComponent implements OnInit {
     this.heroService.getHeroes().subscribe((heroes: Hero[]) => this.heroes= heroes);
   }
 
+  add(name: string){
+    this.heroService.insertHero({name} as Hero).subscribe(hero=>{this.heroes.push(hero);});
+  }
 }

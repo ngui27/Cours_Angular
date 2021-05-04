@@ -7,4 +7,11 @@
         {{ hero.name}}
     </li>
 </ul>
+
+<p>
+    <label for="">Héros à ajouter :
+        <input id="" type="text" name=""></label><button (click)='add(heroes); heroes=""'>Ajouter
+        héros</button>
+</p>
+
 <app-hero-details *ngIf="selectedHero" [hero]="selectedHero"></app-hero-details>
